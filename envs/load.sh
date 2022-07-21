@@ -1,5 +1,7 @@
 #!/bin/bash
 
+FINAL_ENV_DIR="${ENV_DIR:-.}"
+
 ########################################
 ## Save current environment variables ##
 ########################################
@@ -15,7 +17,7 @@ set -o allexport
 # Run twice to expand variables in higher-priority env files
 for i in 1 2
 do
-  for file in $ENV_DIR/.env $ENV_DIR/.env.$ENV $ENV_DIR/.env.$ENV.local $ENV_DIR/.env.local
+  for file in $FINAL_ENV_DIR/.env $FINAL_ENV_DIR/.env.$ENV $FINAL_ENV_DIR/.env.$ENV.local $FINAL_ENV_DIR/.env.local
   do
     if [[ -f $file ]]; then
       source $file
