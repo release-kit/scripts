@@ -16,8 +16,14 @@ source <(wget -qO- https://raw.githubusercontent.com/release-kit/scripts/main/ub
 
 ### Load envs from file
 
+> **Note**  
+> This scripts requires writing local file  
+> Otherwise, it will be executed in a subshell, causing no envs to be written
+
 ```sh
-source <(wget -qO- https://raw.githubusercontent.com/release-kit/scripts/main/envs/load.sh)
+wget -qO ./temp https://raw.githubusercontent.com/release-kit/scripts/main/envs/load.sh
+source ./temp
+rm ./temp
 ```
 
 Parameters (use `export PARAM="value"`):
