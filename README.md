@@ -19,3 +19,11 @@ source <(wget -qO- https://raw.githubusercontent.com/release-kit/scripts/main/ub
 ```sh
 source <(wget -qO- https://raw.githubusercontent.com/release-kit/scripts/main/envs/load.sh)
 ```
+
+Parameters (use `export PARAM="value"`):
+
+- `ENV` - `production` / `development` / `test`  
+  Will also use `.env.$ENV` and `.env.$ENV.local` files
+
+- `ENV_DIR` - directory where .env files are located  
+  (`.` is the default value)
